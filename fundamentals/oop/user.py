@@ -28,23 +28,25 @@ class User:
 
 # various tests
 
-guido = User("Guido van Rossum", "guido@python.com")
-monty = User("Monty Python", "monty@python.com")
-print(monty.name)	# output: Monty Python
+calli = User("Mori Calliope", "calli@python.com")
+gura = User("Gawr Gura", "gura@python.com")
+amelia = User("Amelia Watson", "ame@python.com")
 
+calli.make_deposit(1000000)
+calli.make_deposit(170000)
+calli.make_withdrawl(40) #kazoo money
+calli.make_withdrawl(10) #wine money
 
-guido.make_deposit(100)
-guido.make_deposit(200)
-monty.make_deposit(50)
-print(guido.account_balance)	# output: 300
-print(monty.account_balance)	# output: 50
+calli.display_user_balance()
 
+gura.make_deposit(2000000)
+gura.make_withdrawl(30) #pizza money
+gura.make_withdrawl(2000) #bathtub money
+gura.make_withdrawl(4000) #big Atlantis party
 
-guido.make_withdrawl(50)
-print(guido.account_balance)	# output: 250
+gura.display_user_balance()
 
-guido.display_user_balance()   # output: Balance: $ 250
+calli.transfer_money(amelia, 42069) #time travel fees
 
-guido.transfer_money(monty, 50)
-print(guido.account_balance)	# output: 200
-print(monty.account_balance)	# output: 100
+calli.display_user_balance()
+amelia.display_user_balance()
