@@ -13,7 +13,7 @@ class BankAccount:
         return self
 
     def display_account_info(self):
-        print("Balance: $", f'{self.account_balance:.2f}')
+        print("Balance: $", f'{self.account_balance:.2f}') # I added this float formatting to force 2 decimal places.
         return self
 
     def yield_interest(self):
