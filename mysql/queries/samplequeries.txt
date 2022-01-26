@@ -1,0 +1,5 @@
+To use the Twitter database as an example:
+INSERT INTO faves (user_id, tweet_id) VALUES (3, 4);
+SELECT * FROM faves LIMIT 100;
+UPDATE faves SET user_id = 1, tweet_id = 3 WHERE id = 1
+DELETE from faves WHERE id = 2;
