@@ -1,0 +1,24 @@
+User queries
+INSERT INTO dojos (name) VALUES ("Cobra Kai");
+INSERT INTO dojos (name) VALUES ("Mr. Miyagi's Dojo");
+INSERT INTO dojos (name) VALUES ("Eagle Fang");
+DELETE FROM dojos;
+INSERT INTO dojos (name) VALUES ("Lin Kuei");
+INSERT INTO dojos (name) VALUES ("Shirai Ryu");
+INSERT INTO dojos (name) VALUES ("Outworld Dojo");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Bai", "Han", "35", "4");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Kuai", "Liang", "32", "4");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Ninja", "Frost", "28", "4");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Hanzo", "Hasashi", "35", "5");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Forrest", "Fox", "25", "5");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Takeda", "Takahashi", "22", "5");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Shao", "Khan", "350", "6");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Princess", "Mileena", "22", "6");
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Princess", "Kitana", "1000", "6");
+SELECT * FROM ninjas WHERE dojo_id = 4;
+SELECT * FROM ninjas WHERE dojo_id = 6;
+SELECT *
+FROM ninjas
+LEFT JOIN dojos
+ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 10;
