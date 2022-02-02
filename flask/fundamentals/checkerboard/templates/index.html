@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Checkerboard
+    </title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+    
+</head>
+<body>
+
+<div id="content">
+    <h1 style="background-color: {{ color2 }}; color: {{ color1 }};">** Checkerboard **</h1>
+    <div id="board">
+        
+        {% for x in range(0,num): %}
+            {% if (x % 2 == 0) %}
+                <div class="row">
+                    {% for x in range(0,num2): %}
+                        {% if (x % 2 == 0) %}                        
+                            <div class="box" style="background-color: {{color1}};"></div>
+                        {% endif %}
+                        {% if (x % 2 == 0) %}
+                            <div class="box2" style="background-color: {{color2}};"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if (x % 2 == 1) %}
+                <div class="row">
+                    {% for x in range(0,num2): %}
+                        {% if (x % 2 == 0) %}                        
+                            <div class="box2" style="background-color: {{color2}};"></div>
+                        {% endif %}
+                        {% if (x % 2 == 0) %}
+                            <div class="box" style="background-color: {{color1}};"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
