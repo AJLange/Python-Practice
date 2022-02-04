@@ -2,10 +2,6 @@ from flask import Flask, render_template, request, redirect, session # Import Fl
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 app.secret_key = 'keep it secret, keep it safe' # set a secret key for security purposes
 
-
-
-
-
 @app.route('/')        
 def index():
     if 'counter' in session:
