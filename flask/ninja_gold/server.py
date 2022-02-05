@@ -13,7 +13,7 @@ def index():
 @app.route('/process_money' , methods=["POST"])        
 def process_gold():
     print(request.form)
-    time = datetime.datetime.now()
+    time = datetime.datetime.now().strftime('%Y/%m/%d: %I:%M:%S %p')
     location = request.form["building"]
     if location == 'farm':
         gold_this_turn = random.randint(10,20)
