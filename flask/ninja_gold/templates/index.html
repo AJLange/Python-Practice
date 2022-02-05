@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Ninja Money Making Game
+    </title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+    
+</head>
+<body>
+
+    <div id="content">
+        <a href="/reset">Reset money</a>
+        <div id="label">
+            Your Gold: 
+            <div id="goldcount">{{ session['gold'] }}</div>
+        </div>
+        <div id="game">
+        <div class="formdisplay">
+            <form action="/process_money" method="post">
+                <div class="card">
+                    <h2>Farm</h2>
+                    <p>(earn 10-20 gold)</p>
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!" />
+                </div>
+            </form>
+        </div>
+            
+        <div class="formdisplay">
+            <form action="/process_money" method="post">
+                <div class="card">
+                    <h2>Cave</h2>
+                    <p>(earn 5-10 gold)</p>
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!" />
+                </div>
+            </form>
+        </div>
+
+        <div class="formdisplay">
+            <form action="/process_money" method="post">
+                <div class="card">
+                    <h2>House</h2>
+                    <p>(earn 2-5 gold)</p>
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!" />
+                </div>
+            </form>
+        </div>
+
+        <div class="formdisplay">
+            <form action="/process_money" method="post">
+                <div class="card">
+                    <h2>Casino</h2>
+                    <p>(earn or lose up to 50 gold)</p>
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!" />
+                </div>
+            </form>
+        </div>
+        </div>
+
+        <div id="info">
+            <p>{{ messages | safe }}</p>
+        </div>
+    </div>
+</body>
+</html>
