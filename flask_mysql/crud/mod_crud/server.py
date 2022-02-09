@@ -1,5 +1,5 @@
 from flask_app import app
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, url_for
 # ...server.py
 
 from flask_app.controllers.users import User
@@ -28,7 +28,8 @@ def edit(id):
     data = { 
         "id":id 
         }
-    return render_template("edit_user.html", user=User.get_one(data))
+    this_user = User.get_one(data)
+    return render_template("edit_user.html", user=this_user)
 
 
 @app.route('/user/show/<int:id>')
@@ -38,13 +39,11 @@ def show(id):
         }
     return render_template("show_user.html", user=User.get_one(data))
 
-@app.route('/user/update',methods=['POST'])
-def update():
+@app.route('/user/update/<int:id>',methods=['POST'])
+def update(id):
     User.update(request.form)
-    data = { 
-        "id":id 
-        }
-    return redirect('/')
+    
+    return redirect(f'/user/show/{id}')
 
 
 @app.route('/user/delete/<int:id>')

@@ -17,8 +17,8 @@
         <h2>User {{user.id}}</h2>
         <p>Name: {{ user.first_name}} {{user.last_name}}</p>
         <p>Email: {{user.email}}</p>
-        <p>Created On: {{ user.created_at.strftime("%b %d %Y") }}</p>
-        <p>Last Updated: {{  user.updated_at.strftime("%b %d %Y") }}</p>
+        <p>Created On: {{ user.created_at.strftime("%b %d %Y  %I:%M:%S %p") }}</p>
+        <p>Last Updated: {{  user.updated_at.strftime("%b %d %Y  %I:%M:%S %p") }}</p>
     </div>
     <div><a href="/user/edit/{{user.id}}" class="btn btn-success">Edit</a> | 
         <a href="/user/delete/{{user.id}}" class="btn btn-success">Delete</a> | 
