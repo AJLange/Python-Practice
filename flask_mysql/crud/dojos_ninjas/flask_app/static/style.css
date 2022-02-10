@@ -1,0 +1,48 @@
+body {
+    display:flex;
+    background-color: white;
+    align-items: center;
+  }
+  
+  h1 {
+    color: black;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  #content {
+      display:flex;
+      align-items: center;
+      width:800px;
+      flex-direction: row;
+      justify-content:space-between;
+      font-family:sans-serif;
+  }
+
+  #leftbar{
+      align-items:center;
+  }
+
+  #rightbar{
+      align-items:center;
+  }
+
+  .infobox{
+      border:2px solid black;
+      width:400px;
+  }
+
+  td {
+      border:1px solid black;
+  }
+
+  .bluebutton{
+      background-color:blue;
+      color:white;
+      border: 1px solid black;
+  }
+
+  .form-group{
+      padding:10px;
+  }

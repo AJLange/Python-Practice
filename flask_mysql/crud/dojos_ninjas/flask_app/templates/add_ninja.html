@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />    
+    <title>Create User</title>
+</head>
+<body>
+<div id="content">
+    <form action="/ninja/create" method="post" id="leftcol">
+        <h2 class="text-center">Add Ninja</h2>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" name="age">
+        </div>
+        <div class="form-group">
+            <label for="dojos">Dojo:</label>
+            <select name="dojo">
+                {% for dojo in dojos %}
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" value="Add Ninja" class="bluebutton">
+    </form>
+</div>
+</body>
+</html>
