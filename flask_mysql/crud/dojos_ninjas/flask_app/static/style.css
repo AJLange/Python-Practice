@@ -31,6 +31,7 @@ body {
   .infobox{
       border:2px solid black;
       width:400px;
+      margin-bottom:25px;
   }
 
   td {
@@ -41,8 +42,20 @@ body {
       background-color:blue;
       color:white;
       border: 1px solid black;
+      margin: 20px;
+      padding: 5px;
   }
 
   .form-group{
       padding:10px;
+
+  }
+
+  .displaytable{
+      border:2px solid black;
+      margin-bottom:25px;
+  }
+
+  .tableitem{
+      border:1px solid black;
   }

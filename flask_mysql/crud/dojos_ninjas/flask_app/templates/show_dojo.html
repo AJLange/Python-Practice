@@ -14,16 +14,22 @@
     
     <div id="leftcol">
 
-        <h2>Dojo {{dojo.id}}</h2>
+        <h2>Dojo {{ dojo.id }}</h2>
         <p>Name: {{ dojo.name}} </p>
         
-        <table>
+        <table class="displaytable">
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
+                <th class="tableitem">First Name</th>
+                <th class="tableitem">Last Name</th>
+                <th class="tableitem">Age</th>
             </tr>
-
+            {% for ninja in dojo.ninjas %}
+            <tr>
+                <td class="tableitem">{{ ninja.first_name }}</td>
+                <td class="tableitem">{{ ninja.last_name }}</td>
+                <td class="tableitem">{{ ninja.age }}</td>
+            </tr>
+            {% endfor %}
         </table>
     
         <a href="/dojos" class="bluebutton">Back</a>
