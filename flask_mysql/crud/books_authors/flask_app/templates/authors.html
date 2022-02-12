@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Authors</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <h1>New Author</h1>
+        <form action="/create/author" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name"></input>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>All Authors</h1>
+            <div class="">
+            {% for author in authors %}
+                <div><a href="/author/{{author.id}}">{{author.name}}</div>
+            {% endfor %}
+            </div>
+            <div class=""><a href="/book/add">Add Book</a></div>
+
+    </div>
+</div>
+
+</body>
+</html>
+

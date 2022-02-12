@@ -6,9 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Authors</title>
+    <title>Books</title>
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="container">
+            <h1>New Author</h1>
+            <form action="/create/book" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name"></input>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    
+        <div class="container">
+            <h1>All Authors</h1>
+                <div class="">
+                {% for book in books %}
+                    <div><a href="/book/{{author.id}}">{{book.name}}</div>
+                {% endfor %}
+                </div>
+                <div class=""><a href="/book/add">Add Book</a></div>
+    
+        </div>
+    </div>
     
 
 </body>
