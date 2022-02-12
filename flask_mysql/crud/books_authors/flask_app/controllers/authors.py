@@ -11,8 +11,11 @@ def create_auth():
 
 @app.route('/')
 def authors():    
-    render_template("authors.html", authors=Author.get_all())
+    return render_template("authors.html", authors=Author.get_all())
 
 @app.route('/author/<int:id>')
-def show_author(id):    
-    render_template("author_info.html", authors=Author.get_one_with_books(id))
+def show_author(id):
+    data = {
+        'id':id
+    } 
+    return render_template("author_page.html", author=Author.get_one_with_books(data))

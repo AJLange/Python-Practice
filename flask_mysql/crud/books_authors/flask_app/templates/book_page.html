@@ -9,8 +9,14 @@
     <title>Books</title>
 </head>
 <body>
-    
-
+    <div class="container">
+        <h1>All Authors that have Favorited {{book.title}}</h1>
+        <table>
+            {% for author in book.authors_who_favorited %}
+            <tr><td>{{author.name}}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
 
