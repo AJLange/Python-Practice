@@ -11,21 +11,34 @@
 
 <body>
     <div class="container-fluid">
-        <div class="container">
-            <h1>{{ author.name }}'s Favorite Books</h1>
-                <div class="col-12">
+
+            <div class="row align-items-start">
+                <div class="col">
+                <h1>{{ author.name }}'s Favorite Books</h1>
+                
                     <table>
                         {% for book in author.favorite_books %}
-                        <tr><td>{{book.title}}</td></tr>
+                        <tr><td><a href="/book/{{book.id}}">{{book.title}}</a></td></tr>
                         {% endfor %}
                     </table>
                 </div>
-                <div class=""><a href="/book/add">Add Book</a></div>
+                <div class="col">
+                    <h2>Add a Favorite</h2>
+                    <form method="post" action="/book/addfav">
+                        <input type="hidden" name="author_id" value="{{author.id}}"></input>
+                        <select name="book_id">
+                        {% for book in unfavorited_books %}
+                        <option value="{{book.id}}">{{book.title}}</option>
+                        {% endfor %}
+                        </select>
+                        <button type="submit" class="btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
     
         </div>
     
-        
-    </div>
+
 
 </body>
 </html>

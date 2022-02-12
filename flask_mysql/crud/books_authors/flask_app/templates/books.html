@@ -10,26 +10,26 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="container">
-            <h1>New Book</h1>
-            <form action="/create/book" method="post">
-                <label for="title">Title:</label>
-                <input type="text" name="title"></input>
-                <label for="num_of_pages">Number of Pages:</label>
-                <input type="number" name="num_of_pages"></input>
-                <button type="submit" class="btn btn-primary">Create</button>
-            </form>
-        </div>
+        <div class="row align-items-start">
+            <div class="col">
+                <h1>New Book</h1>
+                <form action="/create/book" method="post">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title"></input>
+                    <label for="num_of_pages">Number of Pages:</label>
+                    <input type="number" name="num_of_pages"></input>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
     
-        <div class="container">
-            <h1>All Books</h1>
-                <div class="container">
-                    <table>
+            <div class="col">
+                <h1>All Books</h1>
+                <table class="table-light">
                     {% for book in books %}
                     <tr><td><a href="/book/{{book.id}}">{{book.title}}</a></td></tr>
                     {% endfor %}
-                    </table>
-                </div>
+                </table>
+            </div>
     
         </div>
     </div>

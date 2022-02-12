@@ -9,13 +9,32 @@
     <title>Books</title>
 </head>
 <body>
-    <div class="container">
-        <h1>All Authors that have Favorited {{book.title}}</h1>
-        <table>
-            {% for author in book.authors_who_favorited %}
-            <tr><td>{{author.name}}</td></tr>
-            {% endfor %}
-        </table>
+    <div class="container-fluid">
+        <div class="row align-items-start">
+        <div class="col">
+            <h1>All Authors that have Favorited {{book.title}}</h1>
+            <table>
+                {% for author in book.authors_who_favorited %}
+                <tr><td>{{author.name}}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col">
+        <form action="/author/addfav" method="post" class="col-6">
+            <h2 class="text-info">Authors to Favorite</h2>
+            <input type="hidden" name="book_id" value="{{book.id}}">
+                <div class="form-group">
+                    <label for="author_id">Book:</label>
+                    <select name="author_id" class="form-control" >
+                    {% for author in unfavorited_authors %}
+                        <option value="{{author.id}}">{{author.name}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" value="Add Book" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
     </div>
 </body>
 </html>

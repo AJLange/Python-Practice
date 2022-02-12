@@ -18,5 +18,13 @@ def book_show(id):
     data = {
         'id':id
     } 
-    return render_template("book_page.html", book=book.Book.get_by_id(data))
+    return render_template("book_page.html", book=book.Book.get_by_id(data),unfavorited_authors=author.Author.unfavorited_authors(data))
 
+@app.route('/book/addfav', methods=['POST'])
+def book_fav():
+    data = {
+        'author_id': request.form['author_id'],
+        'book_id': request.form['book_id']
+    }
+    author.Author.add_favorite(data)
+    return redirect(f"/book/{request.form['book_id']}")
