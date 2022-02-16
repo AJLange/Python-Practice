@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Counter
+    </title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+    
+</head>
+<body>
+
+    <div id="content">
+        <div id="formdisplay">
+            <form action="/process" method="post">
+                <div id="info">
+                    <div>Your Name:</div> 
+                    <div><input type="text" name="name"></div>
+                </div>
+                <div id="info">
+                    <div>Dojo Location:</div>
+                    <select name="location">
+                        <option value="San Jose">San Jose</option>
+                        <option value="Philadelphia">Philadelphia</option>
+                        <option value="Chicago">Chicago</option>
+                    </select>
+                </div>
+                <div id="info">
+                    <div>Favorite Language:</div>
+                    <div>
+                        <select name="language">
+                            <option value="C#">C#</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="info">
+                    <div>Comment (Optional):</div> <div><textarea name="comment"></textarea></div>
+                </div>
+                <div id="info">
+                    <button name="submit" class="bluebutton">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

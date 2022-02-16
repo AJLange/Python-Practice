@@ -1,0 +1,44 @@
+body {
+    display:flex;
+    background-color: white;
+    align-items: center;
+}
+
+h1 {
+    color: black;
+    align-items: left;
+    justify-content: center;
+    text-decoration:underline;
+    font-weight:bold;
+    
+}
+
+#content {
+    display:flex;
+    align-items: center;
+    width:800px;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#formdisplay{
+    border: 3px solid black;
+    padding: 10px;
+    margin:10px;
+    flex-direction:column;
+    display:flex;
+    justify-content: space-between;
+
+}
+
+#info {
+    flex-direction:row;
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+}
+.bluebutton {
+    border:2px solid black;
+    color:white;
+    background-color:cadetblue;
+}

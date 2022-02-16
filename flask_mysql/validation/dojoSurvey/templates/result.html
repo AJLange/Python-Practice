@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Counter
+    </title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+    
+</head>
+<body>
+
+<div id="content">
+    <div id="formdisplay">
+        <h1>Submitted Info</h1>
+        <div id="info">
+            <div>Name:</div> <div>{{ session['name'] }}</div>
+        </div>
+        <div id="info">
+            <div>Dojo Location:</div> <div>{{ session['location'] }}</div>
+        </div>
+        <div id="info">
+            <div>Favorite Language:</div> <div>{{ session['language'] }}</div>
+        </div>
+        <div id="info">
+            <div>Comment:</div> <div>{{ session['comment'] }}</div>
+        </div>
+        <div id="info">
+            <form method="get" action="/">
+            <button name="back" class="bluebutton">Go Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
