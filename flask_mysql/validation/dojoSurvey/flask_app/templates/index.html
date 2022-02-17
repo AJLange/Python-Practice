@@ -13,6 +13,13 @@
 
     <div id="content">
         <div id="formdisplay">
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <form action="/process" method="post">
                 <div id="info">
                     <div>Your Name:</div> 
@@ -21,18 +28,20 @@
                 <div id="info">
                     <div>Dojo Location:</div>
                     <select name="location">
-                        <option value="San Jose">San Jose</option>
-                        <option value="Philadelphia">Philadelphia</option>
-                        <option value="Chicago">Chicago</option>
+                        <option value="none">None</option>
+                        {% for location in locations %}
+                        <option value="{{dojos.location}}">{{dojos.location}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div id="info">
                     <div>Favorite Language:</div>
                     <div>
                         <select name="language">
-                            <option value="C#">C#</option>
-                            <option value="Python">Python</option>
-                            <option value="Java">Java</option>
+                            <option value="none">None</option>
+                            {% for lang in languages %}
+                            <option value="{{dojos.lang}}">{{dojos.lang}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>

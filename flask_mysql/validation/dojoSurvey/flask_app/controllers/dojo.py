@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app
+from flask_app.models.dojo import Dojo
 from flask import render_template,redirect,request
 
 
@@ -10,10 +11,10 @@ def index():
 @app.route('/process' , methods=["POST"])        
 def submit():
     print(request.form)
-    session['name'] = request.form['name']
-    session['location'] = request.form['location']
-    session['language'] = request.form['language']
-    session['comment'] = request.form['comment']
+    if not Dojo.validate_survey(request.form):
+        return redirect('/')
+    else: #no errors
+        Dojo.save(request.form)
     return redirect('/result')
 
 @app.route('/result')        
