@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app import app, flash
+from flask_app import app
+from flask import flash
 
 class Dojo:
     def __init__(self, data):
