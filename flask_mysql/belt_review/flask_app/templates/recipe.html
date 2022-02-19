@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Welcome, User
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+</head>
+<body>
+
+<div class="d-flex justify-content-between align-items-center py-2 px-5">
+    
+    <h1 class="text-center">Welcome, {{user.first_name}}!</h1>
+    <form action="/dashboard">
+        <button name="submit" class="btn btn-primary">Dashboard</button>
+    </form>
+    <form action="/logout">
+        <button name="submit" class="btn btn-dark">Logout</button>
+    </form>
+</div>
+    
+    <div class="card-body">
+    <h2>{{recipe.name}}</h2>
+    <div>Description: {{recipe.description}}</div>
+    <div>Under 30 Minutes: {% if recipe.time_over == 1 %}
+                                    Yes
+                                {% else %}
+                                    No
+                                {% endif %}</div>
+    <div>Instructions: {{recipe.instructions}}</div>
+    <div>Date Made: {{recipe.date_made.strftime('%b %d %Y')}} </div>
+    </div>
+</div>
+
+</body>
+</html>
