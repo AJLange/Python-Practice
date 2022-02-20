@@ -53,8 +53,12 @@ def edit_rec(id):
     print(recipe)
     return render_template("editrecipe.html", recipe=recipe)
 
-@app.route('/recipes/update/<int:id>' , methods=['POST'])
+@app.route('/recipes/update' , methods=['POST'])
 def update():
+    if 'user_id' not in session:
+        return redirect('/logout')
+    if not Recipe.validate_recipe(request.form):
+        return redirect('/dashboard')
     data = {
         "name": request.form['name'],
         "instructions": request.form['instructions'],

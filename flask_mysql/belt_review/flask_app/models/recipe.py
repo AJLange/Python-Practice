@@ -44,5 +44,22 @@ class Recipe:
 
     @classmethod
     def update(cls,data):
-        query = "UPDATE recipes SET name =%(name)s, description= %(description)s, instructions= %(instructions)s, time_over = %(time_over)s, date_made = %(date_made)s, updated_on = NOW(), WHERE id = %(id)s;"
+        query = "UPDATE recipes SET name =%(name)s, description= %(description)s, instructions= %(instructions)s, time_over = %(time_over)s, date_made = %(date_made)s, updated_on = NOW() WHERE id = %(id)s;"
         return connectToMySQL(cls.db).query_db(query,data)
+
+    @staticmethod
+    def validate_recipe(recipe):
+        is_valid = True
+        if len(recipe['name']) < 3:
+            is_valid = False
+            flash("Name must be at least 3 characters","recipe")
+        if len(recipe['instructions']) < 3:
+            is_valid = False
+            flash("Instructions must be at least 3 characters","recipe")
+        if len(recipe['description']) < 3:
+            is_valid = False
+            flash("Description must be at least 3 characters","recipe")
+        if recipe['date_made'] == "":
+            is_valid = False
+            flash("Please enter a date","recipe")
+        return is_valid
