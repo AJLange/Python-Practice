@@ -7,6 +7,11 @@ from flask import render_template,redirect,request,session
 
 @app.route('/recipes/new')
 def new_rec():
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        "id":session['user_id']
+    }
     return render_template("addrecipe.html")
 
 @app.route('/recipe/create', methods=['POST'])
