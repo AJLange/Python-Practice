@@ -1,0 +1,1 @@
+This is a small web site to show the weather. Mostly about demonstrating JavaScript functionality.

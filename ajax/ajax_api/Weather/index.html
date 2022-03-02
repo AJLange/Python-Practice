@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather Forecast</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+<body>
+<div id="topbar">
+    <div id="headbar">
+        <h1 class="head">DojoWeather</h1>
+        <div class="cityList">
+            <div class="city" onclick="getAPIData('Burbank', 'metric')">Burbank</div>
+            <div class="city" onclick="getAPIData('Chicago', 'metric')">Chicago</div>
+            <div class="city" onclick="getAPIData('Dallas', 'metric')">Dallas</div>
+        </div>
+    </div>
+</div>
+
+<div id="container">
+    <div id="cityheader">
+        <div>
+            <h2 id="thisCity">San Jose</h2>
+        </div>
+        <div id="showTempIn">Show temperature in...
+            <select name="degrees" id="degrees" onchange="getAPIData('Burbank', value)">
+                <option value="metric">C</option>
+                <option value="imperial">F</option>     
+            </select>
+        </div>
+    </div>
+    <div id="weatherblocks">
+        <div class="forecast">
+            <div class="forecastHeader">
+                Today
+            </div>
+            <div><img class="weatherImage" src="assets/some_rain.png" alt="rain"></div>
+            <div id="weathercaption">some rain</div>
+            <div class="temperatures">
+                <div class="hightemp"><div id="hightemp0">24</div>° </div>
+                <div class="lowtemp"><div id="lowtemp0">18</div>°</div>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="forecastHeader">
+                Tomorrow
+            </div>
+            <div><img src="assets/some_sun.png"  class="weatherImage" alt="sun"></div>
+            <div class="weatherCaption">some sun</div>
+            <div class="temperatures">
+                <div class="hightemp"><div id="hightemp1">27</div>° </div>
+                <div class="lowtemp"><div id="lowtemp1">19</div>°</div>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="forecastHeader">
+                Friday
+            </div>
+            <div><img src="assets/some_clouds.png"  class="weatherImage" alt="clouds"></div>
+            <div class="weatherCaption">some clouds</div>
+            <div class="temperatures">
+                <div class="hightemp"><div id="hightemp2">21</div>°</div>
+                <div class="lowtemp"><div id="lowtemp2">16</div>°</div>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="forecastHeader">
+                Saturday
+            </div>
+            <div><img src="assets/some_sun.png"  class="weatherImage" alt="sun"></div>
+            <div class="weatherCaption">some sun</div>
+            <div class="temperatures">
+                <div class="hightemp"><div id="hightemp3">26</div>°</div>
+                <div class="lowtemp"> <div id="lowtemp3">21</div>°</div>
+            </div>
+        </div>
+    </div>     
+</div>
+
+<div id="cookiebox">
+    <div><img src="assets/cookie.png" alt="Cookies!" class="cookie"></div>
+    <div class="cookietext">
+        <div class="cookiehead">Stop! Cookie time</div>
+        <div class="cookiewarn">We use cookies (sadly not the edible ones) to personalize content and ads,
+        to provide social media features, and to analyze our traffic. <a href="#">Read More...</a></div>
+    </div>
+    <button class="accept" onclick="closeBox()">I Accept</button>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</body>
+
+</html>
